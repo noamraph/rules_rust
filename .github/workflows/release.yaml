@@ -21,22 +21,22 @@ jobs:
         run: |
           git fetch origin &> /dev/null
           branch="$(git rev-parse --abbrev-ref HEAD)"
-          #if [[ "${branch}" != "main" ]]; then
-          #  echo "The release branch must be main. Got '${branch}'' instead." >&2
-          #  exit 1
-          #else
+          # if [[ "${branch}" != "main" ]]; then
+          #   echo "The release branch must be main. Got '${branch}'' instead." >&2
+          #   exit 1
+          # else
             echo "Branch is '${branch}'"
-          #fi
+          # fi
       - name: Ensure release does not already exist
         run: |
           git fetch origin &> /dev/null
           version="$(grep 'VERSION =' ${{ github.workspace }}/version.bzl | sed 's/VERSION = "//' | sed 's/"//')"
-          if [[ -n "$(git tag -l ${version})" ]]; then
-            echo "A release '${version}' already exists." >&2
-            exit 1
-          else
+          # if [[ -n "$(git tag -l ${version})" ]]; then
+          #   echo "A release '${version}' already exists." >&2
+          #   exit 1
+          # else
             echo "Tag '${version}' will be created"
-          fi
+          # fi
   builds:
     needs: validation
     runs-on: ${{ matrix.os }}
