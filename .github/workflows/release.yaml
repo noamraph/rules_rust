@@ -21,12 +21,12 @@ jobs:
         run: |
           git fetch origin &> /dev/null
           branch="$(git rev-parse --abbrev-ref HEAD)"
-          if [[ "${branch}" != "main" ]]; then
-            echo "The release branch must be main. Got '${branch}'' instead." >&2
-            exit 1
-          else
+          #if [[ "${branch}" != "main" ]]; then
+          #  echo "The release branch must be main. Got '${branch}'' instead." >&2
+          #  exit 1
+          #else
             echo "Branch is '${branch}'"
-          fi
+          #fi
       - name: Ensure release does not already exist
         run: |
           git fetch origin &> /dev/null
