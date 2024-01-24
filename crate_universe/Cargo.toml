@@ -20,7 +20,7 @@ default = ["cargo"]
 
 [dependencies]
 anyhow = "1.0.57"
-cargo_metadata = "0.14.2"
+cargo_metadata = "0.18.1"
 cargo_toml = "0.11.5"
 cargo-lock = "9.0.0"
 cargo-platform = "0.1.2"
