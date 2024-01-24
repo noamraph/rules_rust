@@ -26,7 +26,8 @@ cargo-lock = "9.0.0"
 cargo-platform = "0.1.2"
 cfg-expr = "0.10.3"
 clap = { version = "3.1.18", features = ["derive", "env"] }
-crates-index = { version = "2.5.0", features = ["git-https"] }
+crates-index = { version = "=2.2.0", default-features = false, features = ["git"] }
+gix = { version = "0.54.1", default-features = false, features = ["blocking-http-transport-curl"] }
 hex = "0.4.3"
 normpath = "0.3"
 pathdiff = "0.2.1"
