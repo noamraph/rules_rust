@@ -24,7 +24,7 @@ cargo_metadata = "0.18.1"
 cargo_toml = "0.11.5"
 cargo-lock = "9.0.0"
 cargo-platform = "0.1.4"
-cfg-expr = "0.10.3"
+cfg-expr = "0.15.5"
 clap = { version = "3.1.18", features = ["derive", "env"] }
 crates-index = { version = "=2.2.0", default-features = false, features = ["git"] }
 gix = { version = "0.54.1", default-features = false, features = ["blocking-http-transport-curl"] }
