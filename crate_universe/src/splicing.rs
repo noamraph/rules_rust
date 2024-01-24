@@ -309,7 +309,7 @@ impl WorkspaceMetadata {
                     };
 
                     // Load the index for the current url
-                    let index = crates_index::Index::from_url(index_url)
+                    let index = crates_index::GitIndex::from_url(index_url)
                         .with_context(|| format!("Failed to load index for url: {}", index_url))?;
 
                     // Ensure each index has a valid index config
@@ -322,7 +322,7 @@ impl WorkspaceMetadata {
 
                 Ok((url, index))
             })
-            .collect::<Result<BTreeMap<String, crates_index::Index>>>()
+            .collect::<Result<BTreeMap<String, crates_index::GitIndex>>>()
             .context("Failed to locate crate indexes")?;
 
         // Get the download URL of each package based on it's registry url.

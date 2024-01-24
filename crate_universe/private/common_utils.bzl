@@ -42,7 +42,7 @@ def execute(repository_ctx, args, env = {}):
 
     if result.return_code:
         fail(_EXECUTE_ERROR_MESSAGE.format(
-            args = args,
+            args = " ".join(["{}={}".format(k, v) for k, v in env.items()] + [str(x) for x in args]),
             exit_code = result.return_code,
             stdout = result.stdout,
             stderr = result.stderr,
