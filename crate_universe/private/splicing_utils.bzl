@@ -156,6 +156,7 @@ def splice_workspace_manifest(repository_ctx, generator, cargo_lockfile, splicin
         "CARGO": str(cargo),
         "RUSTC": str(rustc),
         "RUST_BACKTRACE": "full",
+        "https_proxy": "",  # A hack: our build system added it, and it messed with gix
     }
 
     # Ensure the short hand repin variable is set to the full name.
